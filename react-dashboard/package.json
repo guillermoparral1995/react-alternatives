@@ -1,0 +1,45 @@
+{
+  "name": "react-dashboard",
+  "version": "1.0.0",
+  "description": "Personal dashboard made in React for comparison",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo `No tests are made yet!`",
+    "build": "NODE_ENV=production webpack",
+    "build:dev": "webpack",
+    "start": "NODE_ENV=production nodemon index.js",
+    "start:dev": "concurrently \"webpack-dev-server --open\" \"nodemon index.js\""
+  },
+  "author": "Guillermo Parral",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.1.0",
+    "core-js": "^3.6.4",
+    "css-loader": "^3.4.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "terser-webpack-plugin": "^2.3.5",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
