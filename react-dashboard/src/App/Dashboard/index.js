@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import SideBar from './SideBar';
+import { formattedName } from '../../utils';
 
 const Dashboard = () => {
   const [personalInfo, setPersonalInfo] = useState({});
@@ -8,7 +9,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchPersonalInfo = async() => {
-      const response = await fetch(`http://localhost:8080/personal-info/${user}`);
+      const response = await fetch(`http://localhost:8080/personal-info/${formattedName(user)}`);
       const data = await response.json();
 
       setPersonalInfo(data);

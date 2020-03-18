@@ -15,6 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: path.resolve(__dirname, 'public/'),
   },
   devtool: env === 'development' ? 'inline-source-map' : 'source-map',
   module: {
@@ -45,7 +46,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'public'),
     compress: true,
     hot: true,
     writeToDisk: true,
