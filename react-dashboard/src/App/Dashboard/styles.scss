@@ -1,0 +1,17 @@
+#dashboard-container {
+  display: flex;
+}
+
+#side-bar {
+  flex: 1;
+  margin-right: 30px;
+}
+
+#cv {
+  flex: 4;
+}
+
+#contacts {
+  flex: 1;
+}
+

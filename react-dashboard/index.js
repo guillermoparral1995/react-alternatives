@@ -1,4 +1,5 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
@@ -6,10 +7,11 @@ const handleError = require('./middlewares/errorHandler');
 
 if(process.env.NODE_ENV !== 'production') {
   app.use(cors());
-}
-
-if(process.env.NODE_ENV === 'production') {
+} else {
   app.use(express.static('dist'));
+  app.get('/*', (_req, res) => {
+    res.render('dist/index.html');
+  });
 }
 
 app.get('/personal-info/:user', (req, res, next) => {
