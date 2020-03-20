@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import ProfileInfo from './ProfileInfo';
 import CV from './CV';
 import UserNotFound from './UserNotFound';
+import Contact from './Contact';
 import { formattedName } from '../../utils';
 
 import './styles.scss';
@@ -19,7 +20,7 @@ const Dashboard = () => {
       setPersonalInfo(data);
     };
     fetchPersonalInfo();
-  }, []);
+  }, [user]);
   return personalInfo ? personalInfo.name ? <main id="dashboard-container">
     <section id="side-bar">
       <ProfileInfo 
@@ -39,7 +40,9 @@ const Dashboard = () => {
       />
     </section>
     <section id="contacts">
-
+      {
+        personalInfo.contacts.map((contact, idx) => <Contact key={idx} {...contact}></Contact>)
+      }
     </section>
   </main> : <UserNotFound /> : null;
 };

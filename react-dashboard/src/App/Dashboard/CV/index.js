@@ -1,10 +1,8 @@
 import React from 'react';
 import './styles.scss';
+import { capitalize } from '../../../utils';
 
-const CV = ({ studies, work, hobbies }) => {
-  const capitalize = (word) => `${word.charAt(0).toUpperCase()}${word.substring(1)}`
-
-  return <div id="cv-container">
+const CV = ({ studies, work, hobbies }) => <div id="cv-container">
     <h2>Perfil de usuario</h2>
     {
       studies ? <div className="cv-section" id="studies-section">
@@ -57,7 +55,6 @@ const CV = ({ studies, work, hobbies }) => {
         }
       </div> : null
     }
-  </div>
-}
+  </div>;
 
 export default CV;
