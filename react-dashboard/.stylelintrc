@@ -1,0 +1,17 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "plugins": [
+		"stylelint-order"
+	],
+  "rules": {
+    "selector-max-id": null,
+    "color-named": null,
+    "selector-max-compound-selectors": null,
+    "order/order": [
+			"custom-properties",
+			"declarations"
+		],
+		"order/properties-alphabetical-order": true
+  },
+  "ignoreFiles": ["node_modules/*"]
+}
