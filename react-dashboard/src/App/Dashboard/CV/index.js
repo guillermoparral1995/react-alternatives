@@ -43,7 +43,7 @@ const CV = ({ studies, work, hobbies }) => <div id="cv-container">
             {
               Object.entries(hobbies.preferences).map(([category, list], idx) => 
                 <div key={idx} className='preference-col'>
-                  <h5>{capitalize(category)}</h5>
+                  <p className='preference-title'>{capitalize(category)}</p>
                   <ul>
                     {list.map((li, idx) => <li key={idx}>{li}</li>)}
                   </ul>

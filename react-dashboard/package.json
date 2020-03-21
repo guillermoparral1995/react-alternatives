@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Personal dashboard made in React for comparison",
   "main": "index.js",
+  "engines": {
+    "node": "12.16.1"
+  },
   "scripts": {
     "test": "echo `No tests are made yet!`",
     "lint": "eslint src/**/*.js --fix && stylelint src/**/*.scss --fix",

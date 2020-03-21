@@ -17,6 +17,9 @@ const HomePage = () => {
   }
 
   return <main>
+    <section id="greeting">
+      <h1>Bienvenidx a Dashboard!</h1>
+    </section>
     <section id="search">
       <form onSubmit={(e) => handleSubmit(e)}>
         <input type="text" placeholder="A quién buscás?" onChange={(e) => handleTyping(e)}/>
@@ -24,9 +27,6 @@ const HomePage = () => {
           <button>Buscar!</button>
         </NavLink>
       </form>
-    </section>
-    <section id="greeting">
-      <h1>Bienvenidx a Dashboard!</h1>
     </section>
   </main>
 }

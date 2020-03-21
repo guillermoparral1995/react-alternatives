@@ -18,12 +18,20 @@ const addBrotliFileToManfiest = (ext, file, manifest) => {
   }
 }
 
+const devPlugins = [
+  new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([{ from: "public" }], { ignore: ["*.html"] }),
+    new HtmlWebPackPlugin({
+      template: path.join(__dirname, "public", "index.html")
+    }),
+];
+
 module.exports = Object.assign({}, {
   mode: env,
   entry: ["@babel/polyfill", path.join(__dirname, "src", "index.js")],
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[chunkhash].js"
+    filename: env === 'production' ? "[name].[chunkhash].js" : "[name].build.js"
   },
   module: {
     rules: [
@@ -53,12 +61,8 @@ module.exports = Object.assign({}, {
     writeToDisk: true,
     port: 3000
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: "public" }], { ignore: ["*.html"] }),
-    new HtmlWebPackPlugin({
-      template: path.join(__dirname, "public", "index.html")
-    }),
+  plugins: env === 'production' ? [
+    ...devPlugins,
     new ImageminPlugin({
       bail: false,
       cache: true,
@@ -85,7 +89,7 @@ module.exports = Object.assign({}, {
         }, seed);
       },
     }),
-  ],
+  ] : devPlugins,
   optimization: {
     minimize: env === "production",
     minimizer: [

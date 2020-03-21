@@ -46,6 +46,7 @@ const Dashboard = () => {
             />
           </section>
           <section id="contacts">
+            <h3>Contactos</h3>
             {personalInfo.contacts.map((contact, idx) => (
               <Contact key={idx} {...contact}></Contact>
             ))}
