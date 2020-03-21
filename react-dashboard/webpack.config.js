@@ -4,6 +4,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const env = process.env.NODE_ENV || 'development';
 
 module.exports = {
@@ -53,18 +54,24 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([
+      { from: 'public' }
+    ], { ignore: ['*.html'] }),
     new HtmlWebPackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
     }),
     new MiniCssExtractPlugin({
       filename: "./styles.css"
-    })
+    }),
   ],
   optimization: {
     minimize: env === 'production',
     minimizer: [
       new TerserWebpackPlugin(),
       new OptimizeCSSAssetsWebpackPlugin(),
-    ]
+    ],
+    splitChunks: {
+      chunks: 'all',
+    },
   }
 }

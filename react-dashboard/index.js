@@ -9,9 +9,6 @@ if(process.env.NODE_ENV !== 'production') {
   app.use(cors());
 } else {
   app.use(express.static('dist'));
-  app.get('/*', (_req, res) => {
-    res.render('dist/index.html');
-  });
 }
 
 app.get('/personal-info/:user', (req, res, next) => {
