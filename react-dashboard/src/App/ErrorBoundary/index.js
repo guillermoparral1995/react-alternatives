@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 import ErrorPage from '../Common/ErrorPage';
 
 class ErrorBoundary extends React.Component {
@@ -15,6 +16,18 @@ class ErrorBoundary extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.unlisten = this.props.history.listen((_location, _action) => {
+      if (this.state.hasError) {
+        this.setState({ hasError: false });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.unlisten();
+  }
+
   render() {
     if (this.state.hasError) {
       return <ErrorPage />;
@@ -24,4 +37,4 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-export default ErrorBoundary;
+export default withRouter(ErrorBoundary);

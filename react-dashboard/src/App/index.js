@@ -4,8 +4,8 @@ import Loading from "./Common/Loading";
 import ErrorBoundary from "./ErrorBoundary";
 import "./styles.scss";
 
-const HomePage = lazy(() => import("./HomePage"));
-const Dashboard = lazy(() => import("./Dashboard"));
+const HomePage = lazy(() => import(/* webpackChunkName: "HomePage" */ "./HomePage"));
+const Dashboard = lazy(() => import(/* webpackChunkName: "Dashboard" */ "./Dashboard"));
 
 const App = () => (
   <BrowserRouter>

@@ -3,12 +3,15 @@ const app = express();
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const expressStaticGzip = require('express-static-gzip');
 const handleError = require('./middlewares/errorHandler');
 
 if(process.env.NODE_ENV !== 'production') {
   app.use(cors());
 } else {
-  app.use(express.static('dist'));
+  app.use('/', expressStaticGzip('dist', {
+    enableBrotli: true
+  }));
 }
 
 app.get('/personal-info/:user', (req, res, next) => {

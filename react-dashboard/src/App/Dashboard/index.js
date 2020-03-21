@@ -2,11 +2,12 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import { useParams } from "react-router-dom";
 import { formattedName } from "../../utils";
 import Loading from "../Common/Loading";
+import ErrorPage from "../Common/ErrorPage";
 import "./styles.scss";
 
-const ProfileInfo = lazy(() => import("./ProfileInfo"));
-const CV = lazy(() => import("./CV"));
-const Contact = lazy(() => import("./Contact"));
+const ProfileInfo = lazy(() => import(/* webpackChunkName: "ProfileInfo" */ "./ProfileInfo"));
+const CV = lazy(() => import(/* webpackChunkName: "CV" */ "./CV"));
+const Contact = lazy(() => import(/* webpackChunkName: "Contact" */ "./Contact"));
 
 const Dashboard = () => {
   const [personalInfo, setPersonalInfo] = useState(undefined);
