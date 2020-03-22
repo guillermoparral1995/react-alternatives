@@ -34,11 +34,19 @@ module.exports = Object.assign({}, {
     path: path.resolve(__dirname, "dist"),
     filename: env === 'production' ? "[name].[chunkhash].js" : "[name].build.js"
   },
+  resolve: {
+    extensions: ['*', '.mjs', '.js', '.svelte']
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        enforce: 'pre',
+        test: /\.svelte$/,
+        loader: 'svelte-loader'
+      },
+      {
+        test: /\.js$/,
+        include: /src|node_modules[\\/]svelte-?/,
         loader: "babel-loader"
       },
       {
@@ -46,7 +54,7 @@ module.exports = Object.assign({}, {
         loader: "html-loader"
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.scss$/i,
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
@@ -80,7 +88,7 @@ module.exports = Object.assign({}, {
     }),
     new BrotliPlugin({
 			asset: '[fileWithoutExt].[ext].br',
-      test: /\.(js|html|css)$/,
+      test: /\.(js|html)$/,
       deleteOriginalAssets: true
 		}),
     new ManifestPlugin({
@@ -90,7 +98,6 @@ module.exports = Object.assign({}, {
           manifest[file.name] = file.path;
           addBrotliFileToManfiest('js', file, manifest);
           addBrotliFileToManfiest('html', file, manifest);
-          addBrotliFileToManfiest('css', file, manifest);
           return manifest;
         }, seed);
       },

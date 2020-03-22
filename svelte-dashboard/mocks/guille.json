@@ -1,0 +1,96 @@
+{
+  "name": "Guillermo Parral",
+  "nickname": "Guille",
+  "username": "guille",
+  "age": 24,
+  "birthdate": "17/10/1995",
+  "type": "human",
+  "origin": {
+    "country": "Argentina",
+    "city": "Buenos Aires",
+    "neighborhood": "Villa Real"
+  },
+  "studies": {
+    "university": "Universidad de Buenos Aires",
+    "career": "Licenciatura en Ciencias de la Computación",
+    "finished": false
+  },
+  "work": [
+    {
+      "place": "Melta S.A",
+      "position": "Técnico Electrónico",
+      "started": "Marzo de 2014",
+      "time": "1 año y medio"
+    },
+    {
+      "place": "Despegar",
+      "position": "Full-stack Developer",
+      "started": "Agosto de 2015",
+      "time": "4 años"
+    },
+    {
+      "place": "Globant",
+      "position": "Web UI Developer",
+      "started": "Septiembre de 2019",
+      "time": "3 meses"
+    },
+    {
+      "place": "Mercado Libre",
+      "position": "JavaScript Developer",
+      "started": "Diciembre de 2019",
+      "time": "Aún trabajo acá"
+    }
+  ],
+  "hobbies": {
+    "activities": [
+      "Comparar Svelte con React",
+      "Tocar la guitarra",
+      "Jugar a la PS4",
+      "Comer comida chatarra"
+    ],
+    "preferences": {
+      "series": [
+        "Downton Abbey",
+        "La Ley y el Orden U.V.E.",
+        "Breaking Bad",
+        "Brooklyn Nine-Nine"
+      ],
+      "music": [
+        "Radiohead",
+        "Pearl Jam",
+        "White Stripes",
+        "Björk",
+        "Las Ligas Menores",
+        "Suárez"
+      ],
+      "anime": [
+        "Kaguya-sama: Love is war",
+        "Boku dake ga inai machi",
+        "Tatami Galaxy",
+        "xxxHolic"
+      ]
+    }
+  },
+  "contacts": [
+    {
+      "name": "Maga",
+      "username": "maga",
+      "img_src": "maga.jpg"
+    },
+    {
+      "name": "Brownie",
+      "username": "brownie",
+      "img_src": "brownie.jpg"
+    },
+    {
+      "name": "Olivia",
+      "username": "olivia",
+      "img_src": "olivia.jpg"
+    },
+    {
+      "name": "Noboru",
+      "username": "noboru",
+      "img_src": "noboru.jpg"
+    }
+  ]
+}

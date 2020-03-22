@@ -1,0 +1,46 @@
+{
+  "name": "Olivia Alien Benson",
+  "nickname": "Olivia",
+  "username": "olivia",
+  "age": 2,
+  "birthdate": "17/10/2017",
+  "type": "cat",
+  "origin": {
+    "country": "Argentina",
+    "city": "Buenos Aires",
+    "neighborhood": "Villa Pueyrredón"
+  },
+  "hobbies": {
+    "activities": [
+      "Gritar",
+      "Perseguir perros"
+    ],
+    "preferences": {
+      "snacks": [
+        "Plantas del jardín"
+      ]
+    }
+  },
+  "contacts": [
+    {
+      "name": "Guillermo Parral",
+      "username": "guille",
+      "img_src": "guille.jpg"
+    },
+    {
+      "name": "Brownie",
+      "username": "brownie",
+      "img_src": "brownie.jpg"
+    },
+    {
+      "name": "Maga",
+      "username": "maga",
+      "img_src": "maga.jpg"
+    },
+    {
+      "name": "Noboru",
+      "username": "noboru",
+      "img_src": "noboru.jpg"
+    }
+  ]
+}

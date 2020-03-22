@@ -1,0 +1,48 @@
+{
+  "name": "Noboru Wataya Dandelion",
+  "nickname": "Noboru",
+  "username": "noboru",
+  "age": 6,
+  "birthdate": "29/04/2013",
+  "type": "cat",
+  "origin": {
+    "country": "Argentina",
+    "city": "Buenos Aires",
+    "neighborhood": "Versalles"
+  },
+  "hobbies": {
+    "activities": [
+      "Dormir",
+      "Ronronear",
+      "Tomar sol",
+      "Refregarse en la gente"
+    ],
+    "preferences": {
+      "snacks": [
+        "Paté"
+      ]
+    }
+  },
+  "contacts": [
+    {
+      "name": "Guillermo Parral",
+      "username": "guille",
+      "img_src": "guille.jpg"
+    },
+    {
+      "name": "Olivia",
+      "username": "olivia",
+      "img_src": "olivia.jpg"
+    },
+    {
+      "name": "Maga",
+      "username": "maga",
+      "img_src": "maga.jpg"
+    },
+    {
+      "name": "Brownie",
+      "username": "brownie",
+      "img_src": "brownie.jpg"
+    }
+  ]
+}
