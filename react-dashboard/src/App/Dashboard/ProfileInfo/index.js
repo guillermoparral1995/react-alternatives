@@ -11,7 +11,7 @@ const ProfileInfo = ({ name, nickname, username, age, birthdate, origin}) => {
 
   return <div id="profile-info-container">
     <img src={`/${username}.jpg`} />
-    <h3>{nickname}</h3>
+    <h3>{nickname || name}</h3>
     <p>Nombre completo: <br/><strong>{name}</strong></p>
     <p>Edad: <br/><strong>{age}</strong></p>
     <p>Fecha de nacimiento <br/><strong>{birthdate}</strong></p>
