@@ -31,7 +31,7 @@ Para hacer una medición equitativa, ambas implementaciones pasan por las mismas
 
 ## TODO
 
-[ ] SSR
-[ ] Preact
-[ ] Stores/Redux/useReducer
-[ ] WebComponents (integración o hacer otra app entera con WebComponents)
+- [ ] SSR
+- [ ] Preact
+- [ ] Stores/Redux/useReducer
+- [ ] WebComponents (integración o hacer otra app entera con WebComponents)
