@@ -88,7 +88,7 @@ module.exports = Object.assign({}, {
     }),
     new BrotliPlugin({
 			asset: '[fileWithoutExt].[ext].br',
-      test: /\.(js|html)$/,
+      test: /\.(js|html|css)$/,
       deleteOriginalAssets: true
 		}),
     new ManifestPlugin({
@@ -98,6 +98,7 @@ module.exports = Object.assign({}, {
           manifest[file.name] = file.path;
           addBrotliFileToManfiest('js', file, manifest);
           addBrotliFileToManfiest('html', file, manifest);
+          addBrotliFileToManfiest('css', file, manifest);
           return manifest;
         }, seed);
       },

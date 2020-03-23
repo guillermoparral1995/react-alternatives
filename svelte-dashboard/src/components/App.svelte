@@ -1,10 +1,12 @@
 <script>
   import Router, { replace } from 'svelte-spa-router';
-  import HomePage from './HomePage/HomePage.svelte';
-  import Dashboard from './Dashboard/Dashboard.svelte';
+  import { ChunkGenerator } from 'svelte-spa-chunk';
+  import ChunkComponent from 'svelte-spa-chunk/Chunk.svelte';
+
+  const Chunk = ChunkGenerator(ChunkComponent);
   const routes = {
-    '/': HomePage,
-    '/:user': Dashboard
+    '/':      Chunk(() => import(/* webpackChunkName: "HomePage" */ './HomePage/HomePage.svelte')),
+    '/:user': Chunk(() => import(/* webpackChunkName: "Dashboard" */ './Dashboard/Dashboard.svelte'))
   };
 </script>
 
