@@ -10,4 +10,10 @@
   };
 </script>
 
+<style>
+  :global(main) {
+    padding: 30px;
+  }
+</style>
+
 <Router {routes} />
