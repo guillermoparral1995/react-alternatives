@@ -1,8 +1,11 @@
 <script>
-  import { Router, Route } from 'yrv';
+  import Router, { replace } from 'svelte-spa-router';
+  import HomePage from './HomePage/HomePage.svelte';
+  import Dashboard from './Dashboard/Dashboard.svelte';
+  const routes = {
+    '/': HomePage,
+    '/:user': Dashboard
+  };
 </script>
 
-<Router>
-  <Route exact path="/" dynamic={import('./HomePage/HomePage.svelte')} />
-  <Route exact path="/:user" dynamic={import('./Dashboard/Dashboard.svelte')} let:router/>
-</Router>
+<Router {routes} />

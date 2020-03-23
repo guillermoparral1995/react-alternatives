@@ -1,5 +1,4 @@
 <script>
-  import { Link } from 'yrv';
   import { capitalize } from '../../../utils';
   export let name, username, img_src;
 </script>
@@ -26,5 +25,5 @@ p {
 <div class="contact-container">
   <img src={`/${img_src}`} alt={capitalize(name)}/>
   <p>{name}</p>
-  <Link href={`/${username}`}>{`@${username}`}</Link>
+  <a href={`/#/${username}`}>{`@${username}`}</a>
 </div>

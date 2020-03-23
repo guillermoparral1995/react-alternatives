@@ -1,7 +1,7 @@
 <script>
-  import { Link } from 'yrv';
+  import { link } from 'svelte-spa-router';
   import { capitalize } from '../../../utils';
-  export let name, username, nickname, age, birthdate, origin;
+  export let name, nickname, username, age, birthdate, origin;
 
   const formatOrigin = (origin) => {
     const { country, city, neighborhood } = origin;
@@ -26,12 +26,12 @@
 
 <div id="profile-info-container">
   <img src={`/${username}.jpg`} alt={capitalize(username)}/>
-  <h3>{nickname}</h3>
+  <h3>{nickname || name}</h3>
   <p>Nombre completo: <br/><strong>{name}</strong></p>
   <p>Edad: <br/><strong>{age}</strong></p>
   <p>Fecha de nacimiento <br/><strong>{birthdate}</strong></p>
   {#if origin}
     <p>Origen: <br/><strong>{formatOrigin(origin)}</strong></p>
   {/if}
-  <Link href={`/${username}`}>{`@${username}`}</Link>
+  <a href={`/#/${username}`}>{`@${username}`}</a>
 </div>

@@ -7,23 +7,22 @@
   import ErrorPage from "../Common/ErrorPage.svelte";
   import './styles.scss';
 
-  export let router = {};
+  export let params;
   let personalInfo;
-
-  console.log('loaded!');
 
   const fetchAndUpdate = async () => {
     const response = await fetch(
-      `http://localhost:8080/personal-info/${formattedName(router.params.user)}`
+      `http://localhost:8080/personal-info/${formattedName(params.user)}`
     );
     const data = await response.json();
     personalInfo = data;
   }
 
   $: {
-    console.log('new route!')
-    fetchAndUpdate();
-  }
+    if(params.user) {
+      fetchAndUpdate();
+    }
+  } 
 </script>
 
 {#if personalInfo}
