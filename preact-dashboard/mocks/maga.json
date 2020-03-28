@@ -1,0 +1,46 @@
+{
+  "name": "Maga",
+  "username": "maga",
+  "age": 17,
+  "birthdate": "23/03/2002",
+  "type": "dog",
+  "origin": {
+    "country": "Argentina",
+    "city": "Trelew"
+  },
+  "hobbies": {
+    "activities": [
+      "Dormir",
+      "Mover la cola",
+      "Ladrarle a los gatos"
+    ],
+    "preferences": {
+      "snacks": [
+        "Galletas de arroz",
+        "Tomate"
+      ]
+    }
+  },
+  "contacts": [
+    {
+      "name": "Guillermo Parral",
+      "username": "guille",
+      "img_src": "guille.jpg"
+    },
+    {
+      "name": "Brownie",
+      "username": "brownie",
+      "img_src": "brownie.jpg"
+    },
+    {
+      "name": "Olivia",
+      "username": "olivia",
+      "img_src": "olivia.jpg"
+    },
+    {
+      "name": "Noboru",
+      "username": "noboru",
+      "img_src": "noboru.jpg"
+    }
+  ]
+}

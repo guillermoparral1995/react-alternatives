@@ -29,9 +29,12 @@ Para hacer una medición equitativa, ambas implementaciones pasan por las mismas
 - Compresión de HTML, CSS y JS con Brotli
 - Separación de runtime, vendor, main y componentes (usando imports dinámicos para los mismos componentes)
 
+### Resultados
+
+- Tamaño del bundle: gana Svelte (segundo lugar Preact, tercero React)
+
 ## TODO
 
 - [ ] SSR
-- [ ] Preact
 - [ ] Stores/Redux/useReducer
 - [ ] WebComponents (integración o hacer otra app entera con WebComponents)

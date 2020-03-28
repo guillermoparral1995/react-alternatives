@@ -1,0 +1,47 @@
+{
+  "name": "Señor del fuego Ozai",
+  "nickname": "Brownie",
+  "username": "brownie",
+  "age": 2,
+  "birthdate": "22/11/2017",
+  "type": "cat",
+  "origin": {
+    "country": "Argentina",
+    "city": "Buenos Aires",
+    "neighborhood": "Flores"
+  },
+  "hobbies": {
+    "activities": [
+      "Comer",
+      "Cazar pájaros"
+    ],
+    "preferences": {
+      "snacks": [
+        "Pájaros",
+        "Papas fritas"
+      ]
+    }
+  },
+  "contacts": [
+    {
+      "name": "Guillermo Parral",
+      "username": "guille",
+      "img_src": "guille.jpg"
+    },
+    {
+      "name": "Olivia",
+      "username": "olivia",
+      "img_src": "olivia.jpg"
+    },
+    {
+      "name": "Maga",
+      "username": "maga",
+      "img_src": "maga.jpg"
+    },
+    {
+      "name": "Noboru",
+      "username": "noboru",
+      "img_src": "noboru.jpg"
+    }
+  ]
+}

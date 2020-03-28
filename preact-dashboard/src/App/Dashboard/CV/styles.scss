@@ -1,0 +1,40 @@
+@media (max-width: 480px) {
+  h2 {
+    display: none;
+  }
+}
+
+.cv-section {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+
+  @media(max-width: 480px) {
+    ul {
+      text-align: left;
+    }
+  }
+}
+
+.cv-subsection:not(:last-child) {
+  border-bottom: solid 1px gainsboro;
+}
+
+#hobbies-section #preferences-subsection .preference-container {
+  display: flex;
+
+  @media(max-width: 480px) {
+    flex-direction: column;
+  }
+
+  .preference-col {
+    flex: 1;
+  }
+
+  .preference-title {
+    font-style: italic;
+    margin-top: 0;
+  }
+
+}
