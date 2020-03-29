@@ -1,6 +1,6 @@
-# React vs Svelte
+# React Alternatives
 
-Armé este repo para comparar una aplicación regular usando React y Svelte
+Armé este repo para comparar una aplicación regular usando React contra otras alternativas como Preact, Svelte o sólo WebComponents
 
 ## Características de la aplicación
 
@@ -37,4 +37,3 @@ Para hacer una medición equitativa, ambas implementaciones pasan por las mismas
 
 - [ ] SSR
 - [ ] Stores/Redux/useReducer
-- [ ] WebComponents (integración o hacer otra app entera con WebComponents)
