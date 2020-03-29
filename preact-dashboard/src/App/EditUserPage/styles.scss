@@ -1,3 +1,15 @@
+.form-column {
+  display: inline-block;
+  width: 50%;
+}
+
+.preview-column {
+  float: right;
+  height: 100vh;
+  position: relative;
+  width: 47%;
+}
+
 .form-section {
   background-color: darkcyan;
   border: solid darkgreen;
@@ -5,6 +17,10 @@
   font-weight: bold;
   margin: 20px auto;
   padding: 15px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   input,
   select {
@@ -26,6 +42,22 @@
     cursor: pointer;
     margin: 0 5px;
     padding: 10px;
+  }
+}
+
+.form-section-column {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+
+  input,
+  select,
+  button {
+    display: block;
+  }
+
+  button {
+    margin: 10px 0 0 9px;
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import { capitalize } from '../../../utils';
+import { capitalize } from '../../../../utils';
 
 const CV = ({ studies, work, hobbies }) => <div className="cv-container">
     <h2>Perfil de usuario</h2>

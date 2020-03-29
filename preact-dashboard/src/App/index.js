@@ -4,8 +4,8 @@ import Loading from './Common/Loading';
 import ErrorBoundary from './ErrorBoundary';
 
 const HomePage = lazy(() => import(/* webpackChunkName: "HomePage" */ './HomePage'));
-const EditUser = lazy(() => import(/* webpackChunkName: "EditUser" */ './EditUser'));
-const Dashboard = lazy(() => import(/* webpackChunkName: "Dashboard" */ './Dashboard'));
+const EditUserPage = lazy(() => import(/* webpackChunkName: "EditUserPage" */ './EditUserPage'));
+const DashboardPage = lazy(() => import(/* webpackChunkName: "DashboardPage" */ './DashboardPage'));
 
 const App = () => (
   <HashRouter>
@@ -13,8 +13,8 @@ const App = () => (
       <Suspense fallback={<Loading />}>
         <Switch>
           <Route exact path="/" component={HomePage}/>
-          <Route path="/new" component={EditUser} />
-          <Route path="/:user" component={Dashboard} />
+          <Route path="/new" component={EditUserPage} />
+          <Route path="/:user" component={DashboardPage} />
         </Switch>
       </Suspense>
     </ErrorBoundary>

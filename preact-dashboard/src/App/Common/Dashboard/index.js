@@ -1,29 +1,13 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
-import { useParams } from "react-router-dom";
-import { formattedName } from "../../utils";
-import Loading from "../Common/Loading";
-import ErrorPage from "../Common/ErrorPage";
+import Loading from "../Loading";
+import ErrorPage from "../ErrorPage";
 import "./styles.scss";
 
 const ProfileInfo = lazy(() => import(/* webpackChunkName: "ProfileInfo" */ "./ProfileInfo"));
 const CV = lazy(() => import(/* webpackChunkName: "CV" */ "./CV"));
 const Contact = lazy(() => import(/* webpackChunkName: "Contact" */ "./Contact"));
 
-const Dashboard = () => {
-  const [personalInfo, setPersonalInfo] = useState(undefined);
-  const { user } = useParams();
-
-  useEffect(() => {
-    const fetchPersonalInfo = async () => {
-      const response = await fetch(
-        `http://localhost:8082/personal-info/${formattedName(user)}`
-      );
-      const data = await response.json();
-
-      setPersonalInfo(data);
-    };
-    fetchPersonalInfo();
-  }, [user]);
+const Dashboard = ({ personalInfo, showContacts }) => {
   return personalInfo ? (
     personalInfo.name ? (
       <Suspense fallback={<Loading />}>
@@ -36,6 +20,7 @@ const Dashboard = () => {
               age={personalInfo.age}
               birthdate={personalInfo.birthdate}
               origin={personalInfo.origin}
+              showReturn={showContacts}
             />
           </section>
           <section className="cv">
@@ -45,16 +30,19 @@ const Dashboard = () => {
               hobbies={personalInfo.hobbies}
             />
           </section>
-          <section className="contacts">
-            <h3>Contactos</h3>
-            {personalInfo.contacts.length ? personalInfo.contacts.map((contact, idx) => (
-              <Contact key={idx} {...contact}></Contact>
-            )) : <p>Aún no tenés contactos!</p>}
-          </section>
+          {
+            showContacts ? <section className="contacts">
+              <h3>Contactos</h3>
+              {personalInfo.contacts.length ? personalInfo.contacts.map((contact, idx) => (
+                <Contact key={idx} {...contact}></Contact>
+              )) : <p>Aún no tenés contactos!</p>}
+            </section> : null
+          }
+          
         </main>
       </Suspense>
     ) : (
-      <ErrorPage message={"Ups! No pudimos encontrar este usuario"} />
+      showContacts ? <ErrorPage message={"Ups! No pudimos encontrar este usuario"} /> : <Loading />
     )
   ) : (
     <Loading />

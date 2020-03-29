@@ -5,10 +5,11 @@ import OriginInfo from "./OriginInfo";
 import StudiesInfo from "./StudiesInfo";
 import WorkInfo from "./WorkInfo";
 import HobbiesInfo from "./HobbiesInfo";
+import Dashboard from "../Common/Dashboard";
 
 import "./styles.scss";
 
-const EditUser = () => {
+const EditUserPage = ({ history }) => {
   const [state, dispatch] = useReducer(reducer, { contacts: [] });
 
   const handleSubmit = async e => {
@@ -24,17 +25,21 @@ const EditUser = () => {
     if (data.status !== 200) {
       throw { data };
     }
-    return <Redirect to={`/${state.username}`} />;
+    history.push(`/${state.username}`);
   };
 
   return (
     <form onSubmit={e => handleSubmit(e)}>
-      {JSON.stringify(state)}
-      <MainInfo dispatch={dispatch} />
-      <OriginInfo dispatch={dispatch} />
-      <StudiesInfo dispatch={dispatch} />
-      <WorkInfo dispatch={dispatch} work={state.work} />
-      <HobbiesInfo dispatch={dispatch} hobbies={state.hobbies} />
+      <div className="form-column">
+        <MainInfo dispatch={dispatch} />
+        <OriginInfo dispatch={dispatch} />
+        <StudiesInfo dispatch={dispatch} />
+        <WorkInfo dispatch={dispatch} work={state.work} />
+        <HobbiesInfo dispatch={dispatch} hobbies={state.hobbies} />
+      </div>
+      <div className="preview-column">
+        <Dashboard personalInfo={state} showContacts={false}></Dashboard>  
+      </div>
       <section className="form-section submit-section">
         <button>Registrarse!</button>
       </section>
@@ -42,4 +47,4 @@ const EditUser = () => {
   );
 };
 
-export default EditUser;
+export default EditUserPage;

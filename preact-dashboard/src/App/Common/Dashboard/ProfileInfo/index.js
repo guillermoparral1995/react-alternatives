@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './styles.scss';
 
-const ProfileInfo = ({ name, nickname, username, age, birthdate, origin}) => {
+const ProfileInfo = ({ name, nickname, username, age, birthdate, origin, showReturn}) => {
   const formatOrigin = (origin) => {
     const { country, city, neighborhood } = origin;
     const countryText = country || '';
@@ -13,11 +13,13 @@ const ProfileInfo = ({ name, nickname, username, age, birthdate, origin}) => {
   }
 
   return <React.Fragment>
-    <NavLink to={'/'}>
-      <button>Volver al menú</button>
-    </NavLink>
+    {
+      showReturn ? <NavLink to={'/'}>
+        <button>Volver al menú</button>
+      </NavLink> : null
+    }
     <div className="profile-info-container">
-      <img src={`/${username}.jpg`} alt={`${name} profile picture`} />
+      <img src={showReturn ? `/${username}.jpg` : '/default.png'} alt={`${name} profile picture`} />
       <h3>{nickname || name}</h3>
       <p>Nombre completo: <br/><strong>{name}</strong></p>
       <p>Edad: <br/><strong>{age}</strong></p>

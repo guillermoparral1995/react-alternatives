@@ -50,39 +50,43 @@ const WorkInfo = ({ dispatch, work }) => {
           ))}
         </ul>
       ) : null}
-      <label for="place">Lugar</label>
-      <input
-        name="place"
-        placeholder="Ej. Mercado Libre"
-        onChange={e => handleJobFields("place", e.target.value)}
-      />
-      <label for="position">Posición</label>
-      <input
-        name="position"
-        placeholder="Ej. Desarrollador"
-        onChange={e => handleJobFields("position", e.target.value)}
-      />
+      <div className="form-section-column">
+        <label for="place">Lugar</label>
+        <input
+          name="place"
+          placeholder="Ej. Mercado Libre"
+          onChange={e => handleJobFields("place", e.target.value)}
+        />
+        <label for="position">Posición</label>
+        <input
+          name="position"
+          placeholder="Ej. Desarrollador"
+          onChange={e => handleJobFields("position", e.target.value)}
+        />
+      </div>
+      <div className="form-section-column">
       <label for="started">Fecha de inicio</label>
-      <input
-        name="started"
-        placeholder="Ej. Dic de 2019"
-        onChange={e => handleJobFields("started", e.target.value)}
-      />
-      <label for="time">Tiempo en la empresa</label>
-      <input
-        name="time"
-        placeholder="Ej. Actualidad"
-        onChange={e => handleJobFields("time", e.target.value)}
-      />
-      {fields.place ? (
-        <button
-          type="button"
-          disabled={!fields.place}
-          onClick={() => handleAddJob()}
-        >
-          + Añadir
-        </button>
-      ) : null}
+        <input
+          name="started"
+          placeholder="Ej. Dic de 2019"
+          onChange={e => handleJobFields("started", e.target.value)}
+        />
+        <label for="time">Tiempo en la empresa</label>
+        <input
+          name="time"
+          placeholder="Ej. Actualidad"
+          onChange={e => handleJobFields("time", e.target.value)}
+        />
+        {fields.place ? (
+          <button
+            type="button"
+            disabled={!fields.place}
+            onClick={() => handleAddJob()}
+          >
+            + Añadir
+          </button>
+        ) : null}
+      </div>
     </section>
   );
 };
