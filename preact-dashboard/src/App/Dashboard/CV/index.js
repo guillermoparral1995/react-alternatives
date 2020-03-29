@@ -2,10 +2,10 @@ import React from 'react';
 import './styles.scss';
 import { capitalize } from '../../../utils';
 
-const CV = ({ studies, work, hobbies }) => <div id="cv-container">
+const CV = ({ studies, work, hobbies }) => <div className="cv-container">
     <h2>Perfil de usuario</h2>
     {
-      studies ? <div className="cv-section" id="studies-section">
+      studies ? <div className="cv-section studies-section">
         <h3>Estudios</h3>
         <p><strong>Universidad: </strong>{studies.university}</p>
         <p><strong>Carrera: </strong>{studies.career}</p>
@@ -13,7 +13,7 @@ const CV = ({ studies, work, hobbies }) => <div id="cv-container">
       </div> : null
     }
     {
-      work ? <div className="cv-section" id="work-section">
+      work ? <div className="cv-section work-section">
         <h3>Empleo</h3>
         {
           work.map((job, idx) => <div key={idx} className="cv-subsection">
@@ -26,10 +26,10 @@ const CV = ({ studies, work, hobbies }) => <div id="cv-container">
       </div> : null
     }
     {
-      hobbies ? <div className="cv-section" id="hobbies-section">
+      hobbies ? <div className="cv-section hobbies-section">
         <h3>Hobbies</h3>
         {
-          hobbies.activities ? <div className="cv-subsection" id="activities-subsection">
+          hobbies.activities ? <div className="cv-subsection activities-subsection">
             <h4>Actividades favoritas</h4>
             <ul>
               { hobbies.activities.map((activity, idx) => <li key={idx}>{activity}</li>) }
@@ -37,7 +37,7 @@ const CV = ({ studies, work, hobbies }) => <div id="cv-container">
           </div> : null
         }
         {
-          hobbies.preferences ? <div className="cv-subsection" id="preferences-subsection">
+          hobbies.preferences ? <div className="cv-subsection preferences-subsection">
             <h4>Gustos</h4>
             <div className="preference-container">
             {

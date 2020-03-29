@@ -1,0 +1,54 @@
+.form-section {
+  background-color: darkcyan;
+  border: solid darkgreen;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 20px auto;
+  padding: 15px;
+
+  input,
+  select {
+    border: 0;
+    border-radius: 4px;
+    margin: 0 10px;
+    padding: 10px;
+  }
+  
+  select {
+    height: 33px;
+  }
+
+  button {
+    background-color: cornflowerblue;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 10px;
+  }
+}
+
+.form-list-row {
+  display: flex;
+}
+
+.form-list {
+  background-color: white;
+  border-radius: 10px;
+  flex: 1;
+  margin: 0 20px 10px;
+  padding: 5px;
+}
+
+.form-list-item {
+  margin-top: 5px;
+}
+
+.form-section-title {
+  margin-top: 0;
+}
+
+.submit-section {
+  text-align: center;
+}

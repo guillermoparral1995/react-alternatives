@@ -27,8 +27,8 @@ const Dashboard = () => {
   return personalInfo ? (
     personalInfo.name ? (
       <Suspense fallback={<Loading />}>
-        <main id="dashboard-container">
-          <section id="side-bar">
+        <main className="dashboard-container">
+          <section className="side-bar">
             <ProfileInfo
               name={personalInfo.name}
               nickname={personalInfo.nickname}
@@ -38,18 +38,18 @@ const Dashboard = () => {
               origin={personalInfo.origin}
             />
           </section>
-          <section id="cv">
+          <section className="cv">
             <CV
               studies={personalInfo.studies}
               work={personalInfo.work}
               hobbies={personalInfo.hobbies}
             />
           </section>
-          <section id="contacts">
+          <section className="contacts">
             <h3>Contactos</h3>
-            {personalInfo.contacts.map((contact, idx) => (
+            {personalInfo.contacts.length ? personalInfo.contacts.map((contact, idx) => (
               <Contact key={idx} {...contact}></Contact>
-            ))}
+            )) : <p>Aún no tenés contactos!</p>}
           </section>
         </main>
       </Suspense>

@@ -17,16 +17,22 @@ const HomePage = () => {
   }
 
   return <main>
-    <section id="greeting">
+    <section className="greeting">
       <h1>Bienvenidx a Dashboard!</h1>
     </section>
-    <section id="search">
+    <section className="search">
       <form onSubmit={(e) => handleSubmit(e)}>
         <input type="text" placeholder="A quién buscás?" onChange={(e) => handleTyping(e)}/>
         <NavLink to={`/${search}`}>
           <button>Buscar!</button>
         </NavLink>
       </form>
+    </section>
+    <section className="unregistered">
+      <p>Aún no te registraste? Hacete una nueva cuenta!</p>
+      <NavLink to={'/new'}>
+        <button>Registrarse!</button>
+      </NavLink>
     </section>
   </main>
 }

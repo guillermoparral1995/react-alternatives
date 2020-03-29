@@ -1,4 +1,4 @@
-#search {
+.search {
   background-color: darkcyan;
   border: solid darkgreen;
   border-radius: 10px;
@@ -22,7 +22,27 @@
   }
 }
 
-#greeting {
+.greeting {
   font-size: 32px;
   text-align: center;
+}
+
+.unregistered {
+  background-color: darkcyan;
+  border: solid darkgreen;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 20px auto;
+  padding: 15px;
+  text-align: center;
+  width: 60%;
+
+  button {
+    background-color: cornflowerblue;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+  }
 }
