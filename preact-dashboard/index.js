@@ -29,4 +29,4 @@ app.get('/personal-info/:user', (req, res, next) => {
 });
 app.use(handleError);
 
-app.listen(8080, () => console.log('Server listening in port 8080'));
+app.listen(8082, () => console.log('Server listening in port 8082'));

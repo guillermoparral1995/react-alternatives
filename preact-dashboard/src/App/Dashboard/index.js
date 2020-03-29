@@ -16,7 +16,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchPersonalInfo = async () => {
       const response = await fetch(
-        `http://localhost:8080/personal-info/${formattedName(user)}`
+        `http://localhost:8082/personal-info/${formattedName(user)}`
       );
       const data = await response.json();
 

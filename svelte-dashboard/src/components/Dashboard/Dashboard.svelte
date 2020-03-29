@@ -10,7 +10,7 @@
   const fetchAndUpdate = async () => {
     console.log("fetching!");
     const response = await fetch(
-      `http://localhost:8080/personal-info/${formattedName(params.user)}`
+      `http://localhost:8081/personal-info/${formattedName(params.user)}`
     );
     const data = await response.json();
     const {

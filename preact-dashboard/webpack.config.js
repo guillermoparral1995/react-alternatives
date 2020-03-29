@@ -70,7 +70,7 @@ module.exports = Object.assign({}, {
     compress: true,
     hot: true,
     writeToDisk: true,
-    port: 3000
+    port: 3002
   },
   plugins: env === 'production' ? [
     ...devPlugins,
