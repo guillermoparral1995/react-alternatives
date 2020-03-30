@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { withI18n } from '../I18n';
 
 import './styles.scss';
 
-const HomePage = () => {
+const HomePage = ({ getText }) => {
   const [search, setSearch] = useState('');
 
   const handleTyping = (e) => {
@@ -18,23 +19,23 @@ const HomePage = () => {
 
   return <main>
     <section className="greeting">
-      <h1>Bienvenidx a Dashboard!</h1>
+      <h1>{getText('home-page_title')}</h1>
     </section>
     <section className="search">
       <form onSubmit={(e) => handleSubmit(e)}>
         <input type="text" placeholder="A quién buscás?" onChange={(e) => handleTyping(e)}/>
         <NavLink to={`/${search}`}>
-          <button>Buscar!</button>
+          <button>{getText('home-page_search')}</button>
         </NavLink>
       </form>
     </section>
     <section className="unregistered">
-      <p>Aún no te registraste? Hacete una nueva cuenta!</p>
+      <p>{getText('home-page_register_text')}</p>
       <NavLink to={'/new'}>
-        <button>Registrarse!</button>
+        <button>{getText('home-page_register_cta')}</button>
       </NavLink>
     </section>
   </main>
 }
 
-export default HomePage;
+export default withI18n(HomePage);
