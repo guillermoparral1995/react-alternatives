@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { withI18n } from "../../../I18n";
 
 import "./styles.scss";
 
@@ -10,7 +11,8 @@ const ProfileInfo = ({
   age,
   birthdate,
   origin,
-  showReturn
+  showReturn,
+  i18n: { getText, lang }
 }) => {
   const imgRef = useRef(null);
 
@@ -32,7 +34,7 @@ const ProfileInfo = ({
     <React.Fragment>
       {showReturn ? (
         <NavLink to={"/"}>
-          <button>Volver al menú</button>
+          <button>{getText("generic_return", lang)}</button>
         </NavLink>
       ) : null}
       <div className="profile-info-container">
@@ -43,20 +45,20 @@ const ProfileInfo = ({
         />
         <h3>{nickname || name}</h3>
         <p>
-          Nombre completo: <br />
+          {getText('dashboard_profile-info_name', lang)}<br />
           <strong>{name}</strong>
         </p>
         <p>
-          Edad: <br />
+          {getText('dashboard_profile-info_age', lang)}<br />
           <strong>{age}</strong>
         </p>
         <p>
-          Fecha de nacimiento: <br />
+          {getText('dashboard_profile-info_birthdate', lang)}<br />
           <strong>{birthdate}</strong>
         </p>
         {origin ? (
           <p>
-            Origen: <br />
+            {getText('dashboard_profile-info_origin', lang)}<br />
             <strong>{formatOrigin(origin)}</strong>
           </p>
         ) : (
@@ -68,4 +70,4 @@ const ProfileInfo = ({
   );
 };
 
-export default ProfileInfo;
+export default withI18n(ProfileInfo);

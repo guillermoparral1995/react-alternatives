@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { addJob, deleteJob } from "../effects/actions";
+import { withI18n } from "../../I18n";
 
-const WorkInfo = ({ dispatch, work }) => {
+const WorkInfo = ({ dispatch, work, i18n: { getText, lang } }) => {
   const [fields, setFields] = useState({});
 
   const handleJobFields = (field, value) => {
@@ -26,16 +27,16 @@ const WorkInfo = ({ dispatch, work }) => {
   };
 
   const buildJobText = ({ place, position, started, time }) => {
-    const placeText = `Trabajé en ${place}`;
-    const positionText = position ? ` como ${position}` : "";
-    const startedText = started ? ` desde ${started}` : "";
-    const timeText = time ? ` durante ${time}` : "";
+    const placeText = `${getText("edit-user-page_work-info_list_place", lang)}${place}`;
+    const positionText = position ? `${getText("edit-user-page_work-info_list_position", lang)}${position}` : "";
+    const startedText = started ? `${getText("edit-user-page_work-info_list_started", lang)}${started}` : "";
+    const timeText = time ? `${getText("edit-user-page_work-info_list_time", lang)}${time}` : "";
     return `${placeText}${positionText}${startedText}${timeText}`;
   };
 
   return (
     <section className="form-section">
-      <h3 className="form-section-title">Trabajos</h3>
+      <h3 className="form-section-title">{getText("edit-user-page_work-info_title", lang)}</h3>
       {work ? (
         <ul className="form-list">
           {work.map((job, idx) => (
@@ -43,7 +44,7 @@ const WorkInfo = ({ dispatch, work }) => {
               <span>
                 {buildJobText(job)}
                 <button type="button" onClick={() => handleDeleteJob(idx)}>
-                  Borrar
+                  {getText("generic_delete", lang)}
                 </button>
               </span>
             </li>
@@ -51,13 +52,13 @@ const WorkInfo = ({ dispatch, work }) => {
         </ul>
       ) : null}
       <div className="form-section-column">
-        <label for="place">Lugar</label>
+        <label for="place">{getText("edit-user-page_work-info_place", lang)}</label>
         <input
           name="place"
           placeholder="Ej. Mercado Libre"
           onChange={e => handleJobFields("place", e.target.value)}
         />
-        <label for="position">Posición</label>
+        <label for="position">{getText("edit-user-page_work-info_position", lang)}</label>
         <input
           name="position"
           placeholder="Ej. Desarrollador"
@@ -65,13 +66,13 @@ const WorkInfo = ({ dispatch, work }) => {
         />
       </div>
       <div className="form-section-column">
-      <label for="started">Fecha de inicio</label>
+      <label for="started">{getText("edit-user-page_work-info_started", lang)}</label>
         <input
           name="started"
           placeholder="Ej. Dic de 2019"
           onChange={e => handleJobFields("started", e.target.value)}
         />
-        <label for="time">Tiempo en la empresa</label>
+        <label for="time">{getText("edit-user-page_work-info_time", lang)}</label>
         <input
           name="time"
           placeholder="Ej. Actualidad"
@@ -83,7 +84,7 @@ const WorkInfo = ({ dispatch, work }) => {
             disabled={!fields.place}
             onClick={() => handleAddJob()}
           >
-            + Añadir
+            {getText("generic_add", lang)}
           </button>
         ) : null}
       </div>
@@ -91,4 +92,4 @@ const WorkInfo = ({ dispatch, work }) => {
   );
 };
 
-export default WorkInfo;
+export default withI18n(WorkInfo);

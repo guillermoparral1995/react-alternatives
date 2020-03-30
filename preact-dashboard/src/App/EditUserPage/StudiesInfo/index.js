@@ -1,27 +1,28 @@
 import React from "react";
 import { updateStudiesInfo } from "../effects/actions";
+import { withI18n } from "../../I18n";
 
-const StudiesInfo = ({ dispatch }) => {
+const StudiesInfo = ({ dispatch, i18n: { getText, lang } }) => {
   const handleStudiesChange = (field, value) => {
     dispatch(updateStudiesInfo(field, value));
   };
 
   return (
     <section className="form-section">
-      <h3 className="form-section-title">Estudios</h3>
-      <label for="university">Universidad</label>
+      <h3 className="form-section-title">{getText("edit-user-page_studies-info_title", lang)}</h3>
+      <label for="university">{getText("edit-user-page_studies-info_university", lang)}</label>
       <input
         name="university"
         placeholder="Ej. UBA"
         onChange={e => handleStudiesChange("university", e.target.value)}
       />
-      <label for="career">Título</label>
+      <label for="career">{getText("edit-user-page_studies-info_career", lang)}</label>
       <input
         name="career"
         placeholder="Ej. Arquitecto"
         onChange={e => handleStudiesChange("career", e.target.value)}
       />
-      <label for="finished">Finalizado</label>
+      <label for="finished">{getText("edit-user-page_studies-info_finished", lang)}</label>
       <input
         type="checkbox"
         onChange={e => handleStudiesChange("finished", e.target.checked)}
@@ -30,4 +31,4 @@ const StudiesInfo = ({ dispatch }) => {
   );
 };
 
-export default StudiesInfo;
+export default withI18n(StudiesInfo);

@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { addActivity, deleteActivity, addPreference, deletePreference } from "../effects/actions";
+import {
+  addActivity,
+  deleteActivity,
+  addPreference,
+  deletePreference
+} from "../effects/actions";
+import { withI18n } from "../../I18n";
 
-const HobbiesInfo = ({ dispatch, hobbies }) => {
+const HobbiesInfo = ({ dispatch, hobbies, i18n: { getText, lang } }) => {
   const [activity, setActivity] = useState(undefined);
   const [preference, setPreference] = useState({
     category: undefined,
@@ -15,7 +21,7 @@ const HobbiesInfo = ({ dispatch, hobbies }) => {
 
   const handleDeletePreference = (category, idx) => {
     dispatch(deletePreference(category, idx));
-  } 
+  };
 
   const handleAddActivity = () => {
     dispatch(addActivity(activity));
@@ -27,7 +33,9 @@ const HobbiesInfo = ({ dispatch, hobbies }) => {
 
   return (
     <section className="form-section">
-      <h3 className="form-section-title">Hobbies</h3>
+      <h3 className="form-section-title">
+        {getText("edit-user-page_hobbies-info_title", lang)}
+      </h3>
       <div>
         {hobbies && hobbies.activities ? (
           <ul className="form-list">
@@ -39,14 +47,16 @@ const HobbiesInfo = ({ dispatch, hobbies }) => {
                     type="button"
                     onClick={() => handleDeleteActivity(idx)}
                   >
-                    Borrar
+                    {getText("generic_delete", lang)}
                   </button>
                 </span>
               </li>
             ))}
           </ul>
         ) : null}
-        <label for="activities">Actividades favoritas</label>
+        <label for="activities">
+          {getText("edit-user-page_hobbies-info_activities", lang)}
+        </label>
         <input
           name="activities"
           placeholder="Ej. Salir a correr"
@@ -54,22 +64,28 @@ const HobbiesInfo = ({ dispatch, hobbies }) => {
         />
         {activity ? (
           <button type="button" onClick={() => handleAddActivity()}>
-            + Añadir
+            {getText("generic_add")}
           </button>
         ) : null}
       </div>
-      <h3>Gustos</h3>
+      <h3>{getText("edit-user-page_hobbies-info_preferences", lang)}</h3>
       <div>
         {hobbies && hobbies.preferences ? (
           <div className="form-list-row">
             {Object.entries(hobbies.preferences).map(
               ([category, list], idx) => (
                 <ul key={idx} className="form-list">
-                  {category}
+                  {getText(`edit-user-page_hobbies-info_preferences_category_${category}`, lang)}
                   {list.map((elem, idx) => (
                     <li className="form-list-item" key={idx}>
-                      <span>{elem}
-                        <button type="button" onClick={() => handleDeletePreference(category, idx)}>Borrar</button>
+                      <span>
+                        {elem}
+                        <button
+                          type="button"
+                          onClick={() => handleDeletePreference(category, idx)}
+                        >
+                          {getText("generic_delete", lang)}
+                        </button>
                       </span>
                     </li>
                   ))}
@@ -78,24 +94,29 @@ const HobbiesInfo = ({ dispatch, hobbies }) => {
             )}
           </div>
         ) : null}
-        <label for="pref-category">Categoría</label>
+        <label for="pref-category">
+          {getText("edit-user-page_hobbies-info_preferences_category", lang)}
+        </label>
         <select
           name="pref-category"
           onChange={e => {
             setPreference({ ...preference, category: e.target.value });
           }}
         >
-          <option selected>Seleccionar...</option>
-          <option value="music">Música</option>
-          <option value="series">Series</option>
-          <option value="movies">Películas</option>
-          <option value="sports">Deportes</option>
-          <option value="books">Libros</option>
-          <option value="anime">Anime</option>
+          <option selected>{getText("generic_select", lang)}</option>
+          {["music", "series", "movies", "sports", "books", "anime"].map(
+            (category, idx) => (
+              <option key={idx} value={category}>
+                {getText(
+                  `edit-user-page_hobbies-info_preferences_category_${category}`, lang
+                )}
+              </option>
+            )
+          )}
         </select>
         {preference.category ? (
           <React.Fragment>
-            <label for="pref-title">Título</label>
+            <label for="pref-title">{getText("edit-user-page_hobbies-info_preferences_title", lang)}</label>
             <input
               name="pref-title"
               placeholder="Ej. Downton Abbey"
@@ -105,7 +126,7 @@ const HobbiesInfo = ({ dispatch, hobbies }) => {
             />
             {preference.title ? (
               <button type="button" onClick={() => handleAddPreference()}>
-                + Añadir
+                {getText("generic_add", lang)}
               </button>
             ) : null}
           </React.Fragment>
@@ -115,4 +136,4 @@ const HobbiesInfo = ({ dispatch, hobbies }) => {
   );
 };
 
-export default HobbiesInfo;
+export default withI18n(HobbiesInfo);

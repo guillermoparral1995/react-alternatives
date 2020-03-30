@@ -4,7 +4,7 @@ import { withI18n } from '../I18n';
 
 import './styles.scss';
 
-const HomePage = ({ getText }) => {
+const HomePage = ({ i18n: { getText, lang } }) => {
   const [search, setSearch] = useState('');
 
   const handleTyping = (e) => {
@@ -19,20 +19,20 @@ const HomePage = ({ getText }) => {
 
   return <main>
     <section className="greeting">
-      <h1>{getText('home-page_title')}</h1>
+      <h1>{getText('home-page_title', lang)}</h1>
     </section>
     <section className="search">
       <form onSubmit={(e) => handleSubmit(e)}>
         <input type="text" placeholder="A quién buscás?" onChange={(e) => handleTyping(e)}/>
         <NavLink to={`/${search}`}>
-          <button>{getText('home-page_search')}</button>
+          <button>{getText('home-page_search', lang)}</button>
         </NavLink>
       </form>
     </section>
     <section className="unregistered">
-      <p>{getText('home-page_register_text')}</p>
+      <p>{getText('home-page_register_text', lang)}</p>
       <NavLink to={'/new'}>
-        <button>{getText('home-page_register_cta')}</button>
+        <button>{getText('home-page_register_cta', lang)}</button>
       </NavLink>
     </section>
   </main>
