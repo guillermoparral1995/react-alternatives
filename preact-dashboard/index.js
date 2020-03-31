@@ -18,7 +18,6 @@ if(process.env.NODE_ENV !== 'production') {
 }
 
 app.post('/personal-info/save', (req, res, next) => {
-  console.log(req.body);
   const { username } = req.body;
   try {
     const filepath = path.resolve(__dirname, 'mocks', `${username}.json`);

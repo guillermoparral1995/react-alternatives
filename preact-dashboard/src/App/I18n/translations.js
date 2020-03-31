@@ -303,6 +303,10 @@ const translations = {
     es: 'Anime',
     en: 'Anime'
   },
+  'edit-user-page_hobbies-info_preferences_category_snacks': {
+    es: 'Snacks',
+    en: 'Snacks'
+  },
   'edit-user-page_hobbies-info_preferences_title': {
     es: 'Título',
     en: 'Title'

@@ -104,7 +104,7 @@ const HobbiesInfo = ({ dispatch, hobbies, i18n: { getText, lang } }) => {
           }}
         >
           <option selected>{getText("generic_select", lang)}</option>
-          {["music", "series", "movies", "sports", "books", "anime"].map(
+          {["music", "series", "movies", "sports", "books", "anime", "snacks"].map(
             (category, idx) => (
               <option key={idx} value={category}>
                 {getText(
@@ -119,7 +119,7 @@ const HobbiesInfo = ({ dispatch, hobbies, i18n: { getText, lang } }) => {
             <label for="pref-title">{getText("edit-user-page_hobbies-info_preferences_title", lang)}</label>
             <input
               name="pref-title"
-              placeholder={getText("edit-user-page_hobbies-info_preferences-title_placeholder", lang)}
+              placeholder={getText("edit-user-page_hobbies-info_preferences_title_placeholder", lang)}
               onChange={e =>
                 setPreference({ ...preference, title: e.target.value })
               }

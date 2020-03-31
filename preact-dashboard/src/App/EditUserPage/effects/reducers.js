@@ -130,7 +130,6 @@ const reducer = (state, action) => {
             preferences: modifiedPreferences
           }
         : { preferences: modifiedPreferences };
-      console.log(modifiedHobbies);
 
       return {
         ...state,
