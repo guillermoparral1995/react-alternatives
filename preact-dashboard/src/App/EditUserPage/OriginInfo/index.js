@@ -14,19 +14,19 @@ const OriginInfo = ({ dispatch, i18n: { getText, lang } }) => {
       <input
         name="country"
         required
-        placeholder="Ej. Argentina"
+        placeholder={getText("edit-user-page_origin-info_country_placeholder", lang)}
         onChange={e => handleOriginChange("country", e.target.value)}
       />
       <label for="city">{getText("edit-user-page_origin-info_city", lang)}</label>
       <input
         name="city"
-        placeholder="Ej. Buenos Aires"
+        placeholder={getText("edit-user-page_origin-info_city_placeholder", lang)}
         onChange={e => handleOriginChange("city", e.target.value)}
       />
       <label for="neighborhood">{getText("edit-user-page_origin-info_neighborhood", lang)}</label>
       <input
         name="neighborhood"
-        placeholder="Ej. Villa Real"
+        placeholder={getText("edit-user-page_origin-info_neighborhood_placeholder", lang)}
         onChange={e => handleOriginChange("neighborhood", e.target.value)}
       />
     </section>

@@ -55,13 +55,13 @@ const WorkInfo = ({ dispatch, work, i18n: { getText, lang } }) => {
         <label for="place">{getText("edit-user-page_work-info_place", lang)}</label>
         <input
           name="place"
-          placeholder="Ej. Mercado Libre"
+          placeholder={getText("edit-user-page_work-info_place_placeholder", lang)}
           onChange={e => handleJobFields("place", e.target.value)}
         />
         <label for="position">{getText("edit-user-page_work-info_position", lang)}</label>
         <input
           name="position"
-          placeholder="Ej. Desarrollador"
+          placeholder={getText("edit-user-page_work-info_position_placeholder", lang)}
           onChange={e => handleJobFields("position", e.target.value)}
         />
       </div>
@@ -69,13 +69,13 @@ const WorkInfo = ({ dispatch, work, i18n: { getText, lang } }) => {
       <label for="started">{getText("edit-user-page_work-info_started", lang)}</label>
         <input
           name="started"
-          placeholder="Ej. Dic de 2019"
+          placeholder={getText("edit-user-page_work-info_started_placeholder", lang)}
           onChange={e => handleJobFields("started", e.target.value)}
         />
         <label for="time">{getText("edit-user-page_work-info_time", lang)}</label>
         <input
           name="time"
-          placeholder="Ej. Actualidad"
+          placeholder={getText("edit-user-page_work-info_time_placeholder", lang)}
           onChange={e => handleJobFields("time", e.target.value)}
         />
         {fields.place ? (

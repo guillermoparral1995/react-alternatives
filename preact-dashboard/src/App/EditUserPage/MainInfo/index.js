@@ -15,21 +15,21 @@ const MainInfo = ({ dispatch, i18n: { getText, lang } }) => {
         <input
           name="name"
           required
-          placeholder="Ej. Guillermo Parral"
+          placeholder={getText("edit-user-page_main-info_name_placeholder", lang)}
           onChange={e => handleInputChange("name", e.target.value)}
         />
         <label for="nickname">{getText("edit-user-page_main-info_nickname", lang)}</label>
         <input
           name="nickname"
           required
-          placeholder="Ej. Guille"
+          placeholder={getText("edit-user-page_main-info_nickname_placeholder", lang)}
           onChange={e => handleInputChange("nickname", e.target.value)}
         />
         <label for="username">{getText("edit-user-page_main-info_username", lang)}</label>
         <input
           name="username"
           required
-          placeholder="Ej. gparral"
+          placeholder={getText("edit-user-page_main-info_username_placeholder", lang)}
           onChange={e => handleInputChange("username", e.target.value)}
         />
       </div>
@@ -38,14 +38,13 @@ const MainInfo = ({ dispatch, i18n: { getText, lang } }) => {
         <input
           name="age"
           type="number"
-          placeholder="Ej. 24"
+          placeholder={getText("edit-user-page_main-info_age_placeholder", lang)}
           onChange={e => handleInputChange("age", e.target.value)}
         />
         <label for="birthdate">{getText("edit-user-page_main-info_birthdate", lang)}</label>
         <input
           name="birthdate"
           type="date"
-          placeholder="Ej. 17/10/1995"
           onChange={e => handleInputChange("birthdate", e.target.value)}
         />
         <label for="type">{getText("edit-user-page_main-info_species", lang)}</label>

@@ -7,13 +7,13 @@ const translations = {
     es: 'Buscar!',
     en: 'Search!'
   },
+  'home-page_search_placeholder': {
+    es: 'A quién buscas?',
+    en: 'Who are you looking for?'
+  },
   'home-page_register_text': {
     es: 'Aún no te registraste? Hacete una nueva cuenta!',
     en: 'Still not registered? Make yourself a new account!'
-  },
-  'home-page_register_cta': {
-    es: 'Registrarse!',
-    en: 'Register!'
   },
   'dashboard_contacts_title': {
     es: 'Contactos',
@@ -107,17 +107,33 @@ const translations = {
     es: 'Nombre completo',
     en: 'Full name'
   },
+  'edit-user-page_main-info_name_placeholder': {
+    es: 'Ej. Juan Pérez',
+    en: 'Ex. John Smith'
+  },
   'edit-user-page_main-info_nickname': {
     es: 'Apodo',
     en: 'Nickname'
+  },
+  'edit-user-page_main-info_nickname_placeholder': {
+    es: 'Ej. Juan',
+    en: 'Ex. John'
   },
   'edit-user-page_main-info_username': {
     es: 'Nombre de usuario',
     en: 'Username'
   },
+  'edit-user-page_main-info_username_placeholder': {
+    es: 'Ej. jperez',
+    en: 'Ex. jsmith'
+  },
   'edit-user-page_main-info_age': {
     es: 'Edad',
     en: 'Age'
+  },
+  'edit-user-page_main-info_age_placeholder': {
+    es: 'Ej. 30',
+    en: 'Ex. 30'
   },
   'edit-user-page_main-info_birthdate': {
     es: 'Fecha de nacimiento',
@@ -147,13 +163,25 @@ const translations = {
     es: 'País',
     en: 'Country'
   },
+  'edit-user-page_origin-info_country_placeholder': {
+    es: 'Ej. Argentina',
+    en: 'Ex. Argentina'
+  },
   'edit-user-page_origin-info_city': {
     es: 'Ciudad',
     en: 'City'
   },
+  'edit-user-page_origin-info_city_placeholder': {
+    es: 'Ej. Buenos Aires',
+    en: 'Ex. Buenos Aires'
+  },
   'edit-user-page_origin-info_neighborhood': {
     es: 'Barrio',
     en: 'Neighborhood'
+  },
+  'edit-user-page_origin-info_neighborhood_placeholder': {
+    es: 'Ej. Flores',
+    en: 'Ex. Flores'
   },
   'edit-user-page_studies-info_title': {
     es: 'Estudios',
@@ -163,9 +191,17 @@ const translations = {
     es: 'Universidad',
     en: 'University'
   },
+  'edit-user-page_studies-info_university_placeholder': {
+    es: 'Ej. UBA',
+    en: 'Ex. UBA'
+  },
   'edit-user-page_studies-info_career': {
     es: 'Título',
     en: 'Title'
+  },
+  'edit-user-page_studies-info_career_placeholder': {
+    es: 'Ej. Arquitectura',
+    en: 'Ex. Architecture'
   },
   'edit-user-page_studies-info_finished': {
     es: 'Finalizado',
@@ -179,17 +215,33 @@ const translations = {
     es: 'Lugar',
     en: 'Place'
   },
+  'edit-user-page_work-info_place_placeholder': {
+    es: 'Ej. Globant',
+    en: 'Ex. Globant'
+  },
   'edit-user-page_work-info_position': {
     es: 'Posición',
     en: 'Position'
+  },
+  'edit-user-page_work-info_position_placeholder': {
+    es: 'Ej. Desarrollador',
+    en: 'Ex. Developer'
   },
   'edit-user-page_work-info_started': {
     es: 'Fecha de inicio',
     en: 'Start date'
   },
+  'edit-user-page_work-info_started_placeholder': {
+    es: 'Ej. Diciembre 2019',
+    en: 'Ex. December 2019'
+  },
   'edit-user-page_work-info_time': {
     es: 'Tiempo en la empresa',
     en: 'Duration'
+  },
+  'edit-user-page_work-info_time_placeholder': {
+    es: 'Ej. 3 meses',
+    en: 'Ex. 3 months'
   },
   'edit-user-page_work-info_list_place': {
     es: 'Trabajé en ',
@@ -214,6 +266,10 @@ const translations = {
   'edit-user-page_hobbies-info_activities': {
     es: 'Actividades favoritas',
     en: 'Favorite activities'
+  },
+  'edit-user-page_hobbies-info_activities_placeholder': {
+    es: 'Ej. Salir a correr',
+    en: 'Ex. Go running'
   },
   'edit-user-page_hobbies-info_preferences': {
     es: 'Gustos',
@@ -251,6 +307,10 @@ const translations = {
     es: 'Título',
     en: 'Title'
   },
+  'edit-user-page_hobbies-info_preferences_title_placeholder': {
+    es: 'Ej. Downton Abbey',
+    en: 'Ex. Downton Abbey'
+  },
   'dashboard_error_404': {
     es: 'Ups! No pudimos encontrar este usuario',
     en: 'Oops! We couldn\'t find this user'
@@ -274,7 +334,11 @@ const translations = {
   'generic_delete': {
     es: 'Borrar',
     en: 'Delete'
-  }
+  },
+  'generic_register': {
+    es: 'Registrarse!',
+    en: 'Register!'
+  },
 }
 
 export const getText = (key, lang = 'es') => translations[key][lang];

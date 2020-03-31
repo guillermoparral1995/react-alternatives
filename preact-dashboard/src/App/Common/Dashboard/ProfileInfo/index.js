@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { withI18n } from "../../../I18n";
 
@@ -33,13 +33,13 @@ const ProfileInfo = ({
   return (
     <React.Fragment>
       {showReturn ? (
-        <NavLink to={"/"}>
+        <NavLink to={`/?lang=${lang}`}>
           <button>{getText("generic_return", lang)}</button>
         </NavLink>
       ) : null}
       <div className="profile-info-container">
         <img ref={imgRef}
-          src={`/${username}.jpg`}
+          src={showReturn ? `/${username}.jpg`: 'default.png'}
           alt={`${name} profile picture`}
           onError={() => handleOnError()}
         />

@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import reducer from "./effects/reducers";
+import { withI18n } from "../I18n";
 import MainInfo from "./MainInfo";
 import OriginInfo from "./OriginInfo";
 import StudiesInfo from "./StudiesInfo";
@@ -9,7 +10,7 @@ import Dashboard from "../Common/Dashboard";
 
 import "./styles.scss";
 
-const EditUserPage = ({ history }) => {
+const EditUserPage = ({ history, i18n: { getText, lang } }) => {
   const [state, dispatch] = useReducer(reducer, { contacts: [] });
 
   const handleSubmit = async e => {
@@ -25,7 +26,7 @@ const EditUserPage = ({ history }) => {
     if (data.status !== 200) {
       throw { data };
     }
-    history.push(`/${state.username}`);
+    history.push(`/${state.username}?lang=${lang}`);
   };
 
   return (
@@ -41,10 +42,10 @@ const EditUserPage = ({ history }) => {
         <Dashboard personalInfo={state} showContacts={false}></Dashboard>  
       </div>
       <section className="form-section submit-section">
-        <button>Registrarse!</button>
+        <button>{getText('generic_register', lang)}</button>
       </section>
     </form>
   );
 };
 
-export default EditUserPage;
+export default withI18n(EditUserPage);

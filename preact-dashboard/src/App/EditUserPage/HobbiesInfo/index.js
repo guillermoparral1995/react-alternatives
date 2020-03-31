@@ -59,7 +59,7 @@ const HobbiesInfo = ({ dispatch, hobbies, i18n: { getText, lang } }) => {
         </label>
         <input
           name="activities"
-          placeholder="Ej. Salir a correr"
+          placeholder={getText('edit-user-page_hobbies-info_activities_placeholder', lang)}
           onChange={e => setActivity(e.target.value)}
         />
         {activity ? (
@@ -119,7 +119,7 @@ const HobbiesInfo = ({ dispatch, hobbies, i18n: { getText, lang } }) => {
             <label for="pref-title">{getText("edit-user-page_hobbies-info_preferences_title", lang)}</label>
             <input
               name="pref-title"
-              placeholder="Ej. Downton Abbey"
+              placeholder={getText("edit-user-page_hobbies-info_preferences-title_placeholder", lang)}
               onChange={e =>
                 setPreference({ ...preference, title: e.target.value })
               }

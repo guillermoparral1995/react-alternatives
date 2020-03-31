@@ -23,16 +23,16 @@ const HomePage = ({ i18n: { getText, lang } }) => {
     </section>
     <section className="search">
       <form onSubmit={(e) => handleSubmit(e)}>
-        <input type="text" placeholder="A quién buscás?" onChange={(e) => handleTyping(e)}/>
-        <NavLink to={`/${search}`}>
+        <input type="text" placeholder={getText('home-page_search_placeholder', lang)} onChange={(e) => handleTyping(e)}/>
+        <NavLink to={`/${search}?lang=${lang}`}>
           <button>{getText('home-page_search', lang)}</button>
         </NavLink>
       </form>
     </section>
     <section className="unregistered">
       <p>{getText('home-page_register_text', lang)}</p>
-      <NavLink to={'/new'}>
-        <button>{getText('home-page_register_cta', lang)}</button>
+      <NavLink to={`/new?lang=${lang}`}>
+        <button>{getText('generic_register', lang)}</button>
       </NavLink>
     </section>
   </main>

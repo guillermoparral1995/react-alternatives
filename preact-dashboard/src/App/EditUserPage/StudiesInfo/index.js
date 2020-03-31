@@ -13,13 +13,13 @@ const StudiesInfo = ({ dispatch, i18n: { getText, lang } }) => {
       <label for="university">{getText("edit-user-page_studies-info_university", lang)}</label>
       <input
         name="university"
-        placeholder="Ej. UBA"
+        placeholder={getText("edit-user-page_studies-info_university_placeholder", lang)}
         onChange={e => handleStudiesChange("university", e.target.value)}
       />
       <label for="career">{getText("edit-user-page_studies-info_career", lang)}</label>
       <input
         name="career"
-        placeholder="Ej. Arquitecto"
+        placeholder={getText("edit-user-page_studies-info_career_placeholder", lang)}
         onChange={e => handleStudiesChange("career", e.target.value)}
       />
       <label for="finished">{getText("edit-user-page_studies-info_finished", lang)}</label>
