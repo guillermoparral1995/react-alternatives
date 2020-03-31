@@ -1,10 +1,10 @@
 {
-  "name": "react-dashboard",
+  "name": "preact-dashboard",
   "version": "1.0.0",
-  "description": "Personal dashboard made in React for comparison",
+  "description": "Personal dashboard made in Preact for comparison",
   "repository": {
     "url": "https://github.com/guillermoparral1995/react-vs-svelte",
-    "directory": "react-dashboard",
+    "directory": "preact-dashboard",
     "type": "git"
   },
   "bugs": {

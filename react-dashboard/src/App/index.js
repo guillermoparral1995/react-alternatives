@@ -1,26 +1,33 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Loading from "./Common/Loading";
 import ErrorBoundary from "./ErrorBoundary";
+import { I18nProvider } from "./I18n";
 
-const HomePage = lazy(() => import(/* webpackChunkName: "HomePage" */ "./HomePage"));
-const Dashboard = lazy(() => import(/* webpackChunkName: "Dashboard" */ "./Dashboard"));
+const HomePage = lazy(() =>
+  import(/* webpackChunkName: "HomePage" */ "./HomePage")
+);
+const EditUserPage = lazy(() =>
+  import(/* webpackChunkName: "EditUserPage" */ "./EditUserPage")
+);
+const DashboardPage = lazy(() =>
+  import(/* webpackChunkName: "DashboardPage" */ "./DashboardPage")
+);
 
 const App = () => (
-  <BrowserRouter>
-    <ErrorBoundary>
-      <Suspense fallback={<Loading />}>
-        <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route path="/:user">
-            <Dashboard />
-          </Route>
-        </Switch>
-      </Suspense>
-    </ErrorBoundary>
-  </BrowserRouter>
+  <HashRouter>
+    <I18nProvider>
+      <ErrorBoundary>
+        <Suspense fallback={<Loading />}>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/new" component={EditUserPage} />
+            <Route path="/:user" component={DashboardPage} />
+          </Switch>
+        </Suspense>
+      </ErrorBoundary>
+    </I18nProvider>
+  </HashRouter>
 );
 
 export default App;

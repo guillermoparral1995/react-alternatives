@@ -8,7 +8,6 @@
   let personalInfo;
 
   const fetchAndUpdate = async () => {
-    console.log("fetching!");
     const response = await fetch(
       `http://localhost:8081/personal-info/${formattedName(params.user)}`
     );
