@@ -10,20 +10,20 @@ const OriginInfo = ({ dispatch, i18n: { getText, lang } }) => {
   return (
     <section className="form-section">
       <h3 className="form-section-title">{getText("edit-user-page_origin-info_title", lang)}</h3>
-      <label for="country">{getText("edit-user-page_origin-info_country", lang)}</label>
+      <label htmlFor="country">{getText("edit-user-page_origin-info_country", lang)}</label>
       <input
         name="country"
         required
         placeholder={getText("edit-user-page_origin-info_country_placeholder", lang)}
         onChange={e => handleOriginChange("country", e.target.value)}
       />
-      <label for="city">{getText("edit-user-page_origin-info_city", lang)}</label>
+      <label htmlFor="city">{getText("edit-user-page_origin-info_city", lang)}</label>
       <input
         name="city"
         placeholder={getText("edit-user-page_origin-info_city_placeholder", lang)}
         onChange={e => handleOriginChange("city", e.target.value)}
       />
-      <label for="neighborhood">{getText("edit-user-page_origin-info_neighborhood", lang)}</label>
+      <label htmlFor="neighborhood">{getText("edit-user-page_origin-info_neighborhood", lang)}</label>
       <input
         name="neighborhood"
         placeholder={getText("edit-user-page_origin-info_neighborhood_placeholder", lang)}

@@ -5,3 +5,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.loadable-container {
+  height: initial !important;
+  position: initial !important;
+  width: initial !important;
+}
+
+#app-root {
+  padding: 30px;
+}

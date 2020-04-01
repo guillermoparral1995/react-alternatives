@@ -1,6 +1,9 @@
 <script>
-  import { capitalize } from '../../../utils';
+  import { capitalize } from '../../../../utils';
+  import { getContext } from 'svelte';
   export let name, username, img_src;
+
+  const lang = getContext('lang');
 </script>
 
 <style>
@@ -25,5 +28,5 @@ p {
 <div class="contact-container">
   <img src={`/${img_src}`} alt={capitalize(name)}/>
   <p>{name}</p>
-  <a href={`/#/${username}`}>{`@${username}`}</a>
+  <a href={`/#/${username}?lang=${$lang}`}>{`@${username}`}</a>
 </div>

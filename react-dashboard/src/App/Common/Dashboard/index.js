@@ -33,7 +33,7 @@ const Dashboard = ({ personalInfo, showContacts, i18n: { getText, lang } }) => 
           </section>
           {
             showContacts ? <section className="contacts">
-              <h3>{getText('dashboard_contacts_title', lang)}</h3>
+              <h2>{getText('dashboard_contacts_title', lang)}</h2>
               {personalInfo.contacts.length ? personalInfo.contacts.map((contact, idx) => (
                 <Contact key={idx} {...contact}></Contact>
               )) : <p>{getText('dashboard_contacts_empty', lang)}</p>}

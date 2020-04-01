@@ -152,6 +152,12 @@ const reducer = (state, action) => {
       }
       return { ...obj };
     }
+
+    case "CLEAR_ALL": {
+      return {
+        contacts: []
+      }
+    }
   }
 };
 

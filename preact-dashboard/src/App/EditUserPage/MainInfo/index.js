@@ -11,21 +11,21 @@ const MainInfo = ({ dispatch, i18n: { getText, lang } }) => {
     <section className="form-section">
       <h3 className="form-section-title">{getText("edit-user-page_main-info_title", lang)}</h3>
       <div className="form-section-column">
-        <label for="name">{getText("edit-user-page_main-info_name", lang)}</label>
+        <label htmlFor="name">{getText("edit-user-page_main-info_name", lang)}</label>
         <input
           name="name"
           required
           placeholder={getText("edit-user-page_main-info_name_placeholder", lang)}
           onChange={e => handleInputChange("name", e.target.value)}
         />
-        <label for="nickname">{getText("edit-user-page_main-info_nickname", lang)}</label>
+        <label htmlFor="nickname">{getText("edit-user-page_main-info_nickname", lang)}</label>
         <input
           name="nickname"
           required
           placeholder={getText("edit-user-page_main-info_nickname_placeholder", lang)}
           onChange={e => handleInputChange("nickname", e.target.value)}
         />
-        <label for="username">{getText("edit-user-page_main-info_username", lang)}</label>
+        <label htmlFor="username">{getText("edit-user-page_main-info_username", lang)}</label>
         <input
           name="username"
           required
@@ -34,25 +34,26 @@ const MainInfo = ({ dispatch, i18n: { getText, lang } }) => {
         />
       </div>
       <div className="form-section-column">
-        <label for="age">{getText("edit-user-page_main-info_age", lang)}</label>
+        <label htmlFor="age">{getText("edit-user-page_main-info_age", lang)}</label>
         <input
           name="age"
           type="number"
           placeholder={getText("edit-user-page_main-info_age_placeholder", lang)}
           onChange={e => handleInputChange("age", e.target.value)}
         />
-        <label for="birthdate">{getText("edit-user-page_main-info_birthdate", lang)}</label>
+        <label htmlFor="birthdate">{getText("edit-user-page_main-info_birthdate", lang)}</label>
         <input
           name="birthdate"
           type="date"
           onChange={e => handleInputChange("birthdate", e.target.value)}
         />
-        <label for="type">{getText("edit-user-page_main-info_species", lang)}</label>
+        <label htmlFor="type">{getText("edit-user-page_main-info_species", lang)}</label>
         <select
           name="type"
           onChange={e => handleInputChange("type", e.target.value)}
+          defaultValue=''
         >
-          <option selected>{getText("generic_select", lang)}</option>
+          <option value=''>{getText("generic_select", lang)}</option>
           <option value="human">{getText("edit-user-page_main-info_species_human", lang)}</option>
           <option value="cat">{getText("edit-user-page_main-info_species_cat", lang)}</option>
           <option value="dog">{getText("edit-user-page_main-info_species_dog", lang)}</option>

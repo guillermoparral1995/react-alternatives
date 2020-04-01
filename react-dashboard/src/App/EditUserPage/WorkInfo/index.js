@@ -52,13 +52,13 @@ const WorkInfo = ({ dispatch, work, i18n: { getText, lang } }) => {
         </ul>
       ) : null}
       <div className="form-section-column">
-        <label for="place">{getText("edit-user-page_work-info_place", lang)}</label>
+        <label htmlFor="place">{getText("edit-user-page_work-info_place", lang)}</label>
         <input
           name="place"
           placeholder={getText("edit-user-page_work-info_place_placeholder", lang)}
           onChange={e => handleJobFields("place", e.target.value)}
         />
-        <label for="position">{getText("edit-user-page_work-info_position", lang)}</label>
+        <label htmlFor="position">{getText("edit-user-page_work-info_position", lang)}</label>
         <input
           name="position"
           placeholder={getText("edit-user-page_work-info_position_placeholder", lang)}
@@ -66,13 +66,13 @@ const WorkInfo = ({ dispatch, work, i18n: { getText, lang } }) => {
         />
       </div>
       <div className="form-section-column">
-      <label for="started">{getText("edit-user-page_work-info_started", lang)}</label>
+      <label htmlFor="started">{getText("edit-user-page_work-info_started", lang)}</label>
         <input
           name="started"
           placeholder={getText("edit-user-page_work-info_started_placeholder", lang)}
           onChange={e => handleJobFields("started", e.target.value)}
         />
-        <label for="time">{getText("edit-user-page_work-info_time", lang)}</label>
+        <label htmlFor="time">{getText("edit-user-page_work-info_time", lang)}</label>
         <input
           name="time"
           placeholder={getText("edit-user-page_work-info_time_placeholder", lang)}

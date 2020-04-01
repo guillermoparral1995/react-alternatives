@@ -7,6 +7,7 @@ const OptimizeCSSAssetsWebpackPlugin = require("optimize-css-assets-webpack-plug
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ImageminPlugin = require('imagemin-webpack');
 const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminPngquant = require('imagemin-pngquant');
 const BrotliPlugin = require('brotli-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -62,7 +63,7 @@ module.exports = Object.assign({}, {
         ]
       },
       {
-        test: /\.jpg$/,
+        test: /\.(png|jpg)$/,
         loader: "file-loader"
       }
     ]
@@ -82,7 +83,8 @@ module.exports = Object.assign({}, {
       name: '[name].[ext]',
       imageminOptions: {
         plugins: [
-          'mozjpeg'
+          'mozjpeg',
+          'pngquant'
         ]
       }
     }),

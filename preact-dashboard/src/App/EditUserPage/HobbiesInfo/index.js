@@ -54,7 +54,7 @@ const HobbiesInfo = ({ dispatch, hobbies, i18n: { getText, lang } }) => {
             ))}
           </ul>
         ) : null}
-        <label for="activities">
+        <label htmlFor="activities">
           {getText("edit-user-page_hobbies-info_activities", lang)}
         </label>
         <input
@@ -94,7 +94,7 @@ const HobbiesInfo = ({ dispatch, hobbies, i18n: { getText, lang } }) => {
             )}
           </div>
         ) : null}
-        <label for="pref-category">
+        <label htmlFor="pref-category">
           {getText("edit-user-page_hobbies-info_preferences_category", lang)}
         </label>
         <select
@@ -102,8 +102,9 @@ const HobbiesInfo = ({ dispatch, hobbies, i18n: { getText, lang } }) => {
           onChange={e => {
             setPreference({ ...preference, category: e.target.value });
           }}
+          defaultValue=''
         >
-          <option selected>{getText("generic_select", lang)}</option>
+          <option value=''>{getText("generic_select", lang)}</option>
           {["music", "series", "movies", "sports", "books", "anime", "snacks"].map(
             (category, idx) => (
               <option key={idx} value={category}>
@@ -116,7 +117,7 @@ const HobbiesInfo = ({ dispatch, hobbies, i18n: { getText, lang } }) => {
         </select>
         {preference.category ? (
           <React.Fragment>
-            <label for="pref-title">{getText("edit-user-page_hobbies-info_preferences_title", lang)}</label>
+            <label htmlFor="pref-title">{getText("edit-user-page_hobbies-info_preferences_title", lang)}</label>
             <input
               name="pref-title"
               placeholder={getText("edit-user-page_hobbies-info_preferences_title_placeholder", lang)}

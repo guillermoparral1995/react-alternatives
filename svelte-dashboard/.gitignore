@@ -1,3 +1,10 @@
-node_modules
 dist
+node_modules
 .DS_Store
+
+mocks/*.json
+!mocks/guille.json
+!mocks/brownie.json
+!mocks/maga.json
+!mocks/olivia.json
+!mocks/noboru.json
