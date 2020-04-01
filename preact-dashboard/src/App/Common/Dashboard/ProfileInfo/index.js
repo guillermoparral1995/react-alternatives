@@ -49,11 +49,11 @@ const ProfileInfo = ({
           <strong>{name}</strong>
         </p>
         <p>
-          {getText('dashboard_profile-info_age', lang)}<br />
+          {age ? getText('dashboard_profile-info_age', lang) : ''}<br />
           <strong>{age}</strong>
         </p>
         <p>
-          {getText('dashboard_profile-info_birthdate', lang)}<br />
+          {birthdate ? getText('dashboard_profile-info_birthdate', lang) : ''}<br />
           <strong>{birthdate}</strong>
         </p>
         {origin ? (
@@ -64,7 +64,7 @@ const ProfileInfo = ({
         ) : (
           ""
         )}
-        <NavLink to={`/${username}`}>{`@${username}`}</NavLink>
+        <NavLink to={`/${username}`}>{username ? `@${username}` : ''}</NavLink>
       </div>
     </React.Fragment>
   );

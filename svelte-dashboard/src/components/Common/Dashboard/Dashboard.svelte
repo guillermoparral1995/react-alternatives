@@ -10,7 +10,7 @@
 
 <main id="dashboard-container">
   <section id="side-bar">
-    {#await import('./ProfileInfo/ProfileInfo.svelte') then c}
+    {#await import(/* webpackChunkName: "ProfileInfo" */ './ProfileInfo/ProfileInfo.svelte') then c}
       <svelte:component
         this={c.default}
         name={personalInfo.name}
@@ -23,7 +23,7 @@
     {/await}
   </section>
   <section id="cv">
-    {#await import('./CV/CV.svelte') then c}
+    {#await import(/* webpackChunkName: "CV" */ './CV/CV.svelte') then c}
       <svelte:component
         this={c.default}
         studies={personalInfo.studies}
@@ -32,7 +32,7 @@
     {/await}
   </section>
   {#if showContacts}
-    {#await import('./Contact/Contact.svelte') then c}
+    {#await import(/* webpackChunkName: "Contact" */ './Contact/Contact.svelte') then c}
       <section id="contacts">
         <h2>{getText('dashboard_contacts_title', $lang)}</h2>
         {#if personalInfo.contacts.length}
